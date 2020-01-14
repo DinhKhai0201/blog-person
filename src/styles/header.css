@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico|Roboto:400,500);
+nav {
+    background: #333;
+    overflow: auto;
+    padding: 0px 60px;
+    position: relative;
+    z-index: 2;
+}
+
+nav h1 {
+    color: #eee;
+    font-family: 'Pacifico', cursive;
+    /* font-size: 42px; */
+    float: left;
+    margin: 16px auto;
+}
+
+nav h1>a {
+    color: #3ab4a6;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 200ms linear;
+}
+
+nav h1>a:hover {
+    background: none;
+    color: #C18055;
+}
+
+ul.navbar-header {
+    text-align: center;
+    float: right;
+    margin: 16px auto;
+}
+
+ul.navbar-header li {
+    display: inline-block;
+}
+
+ul.navbar-header li a {
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    margin: 0 10px;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: bold;
+    transition: all 200ms linear;
+}
+
+ul.navbar-header li a:hover {
+    color: orange;
+}
+
+nav a:hover,
+a:hover {
+    color: #C18055;
+    background: #fff;
+}
+
+div#content {
+    opacity: 0.9;
+}
+
+div#content h2 {
+    color: #fff;
+    font-weight: bold;
+    transform: rotate(-10deg);
+    line-height: 60px;
+    font-size: 48px;
+    text-transform: uppercase;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: 10%;
+    bottom: 10%;
+    text-shadow: 2px 2px 2px #333;
+    font-family: 'Pacifico', cursive;
+}
+
+div#content h2:before {
+    display: inline-block;
+    background: url('http://www.menoftheras.com/wp-content/gallery/test/arrow.png')no-repeat 0 0;
+    background-size: cover;
+    width: 239px;
+    height: 200px;
+    content: "";
+    transform: rotate(-80deg);
+    margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+    nav {
+        padding: 20px;
+    }
+    nav h1 {
+        display: block;
+        float: none;
+        text-align: center;
+        padding: 20px;
+    }
+    nav ul {
+        float: none;
+        padding: 20px;
+    }
+    div#content h2 {
+        width: 30%;
+    }
+}
