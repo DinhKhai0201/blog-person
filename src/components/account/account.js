@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component , Fragment} from 'react'
 import { Redirect } from 'react-router-dom'
 import '../../styles/login.css'
 import PropTypes from 'prop-types';
@@ -18,34 +18,22 @@ export default class Account extends Component {
         // }
 
         return (
-            <div className="container-login">
-                <input type="radio" name="formOption" id="loginChecked" />
-                <input type="radio" name="formOption" id="signupChecked" defaultChecked />
-                <div className="form-container">
-                    <input type="text" placeholder="First name" />
-                    <input type="text" placeholder="Last name" />
-                    <input type="text" placeholder="Email" />
-                    <input type="text" placeholder="Password" />
-                    
+            <Fragment className ="login-register">
+                <div className="bg"></div>
+                <div className="panel"><input type="radio" id="switch-open" name="switch" /><input type="radio" id="switch-close" name="switch" />
+                  <div className="login">
+                    <h1>LOGIN</h1>
+                    <div className="group"><i className="fa fa-envelope" aria-hidden="true" /><input type="text" id="email" placeholder="E-Mail" /><label htmlFor="email" /></div>
+                    <div className="group"><i className="fa fa-unlock-alt" aria-hidden="true" /><input type="password" id="password" placeholder="Password" /><label htmlFor="password" /></div><input type="submit" defaultValue="LOGIN" /></div>
+                  <div className="register"><label className="button-open" htmlFor="switch-open" /><label className="button-close" htmlFor="switch-close" />
+                    <div className="inner">
+                      <h1>REGISTER</h1>
+                      <div className="group"><i className="fa fa-user" aria-hidden="true" /><input type="text" id="name" placeholder="Name" /><label htmlFor="name" /></div>
+                      <div className="group"><i className="fa fa-envelope" aria-hidden="true" /><input type="text" id="email" placeholder="E-Mail" /><label htmlFor="email" /></div>
+                      <div className="group"><i className="fa fa-unlock-alt" aria-hidden="true" /><input type="password" id="password" placeholder="Password" /><label htmlFor="password" /></div><input type="submit" defaultValue="REGISTER" /></div>
+                  </div>
                 </div>
-                <div className="signup">
-                    <label className="btn-tg" htmlFor="signupChecked">
-                        <span className="btn-front" >signup</span>
-                    </label>
-                    <div className="btn btn-primary">
-                        Sign Up
-                    </div>
-                </div>
-                <div className="login">
-                    <label className="btn-tg" htmlFor="loginChecked">
-                        <span className="btn-front">login</span>
-                    </label>
-
-                    <div  className="btn btn-secondary"  onClick={this.login}>
-                        Login
-                    </div>
-                </div>
-            </div>
+            </Fragment>
         )
     }
 }
