@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 export default class Blog extends Component {
 
-    increaseNumber() {
-        this.props.increase(this.props.countNumber);
-    }
-
     onChangeSearch = (e) => {
         e.preventDefault();
     }
@@ -22,6 +18,5 @@ export default class Blog extends Component {
 }
 
 Blog.propTypes = {
-    increase: PropTypes.func,
     isLoading: PropTypes.bool
 };
