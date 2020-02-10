@@ -4,16 +4,14 @@ import '../../styles/post.css';
 
 export default class Post extends Component {
 
-	increaseNumber() {
-		this.props.increase(this.props.countNumber);
+	componentDidMount(){
+		let id = this.props.match.params.id;
+	    let post = this.props.getPostId(id);
+	    console.log(post);
 	}
-
-	onChangeSearch = (e) => {
-		e.preventDefault();
-	}
-
 	render() {
 		const { isLoading } = this.props;
+		
 		return (
 			<Fragment>
 				<div className ="content-post">
@@ -40,6 +38,6 @@ export default class Post extends Component {
 }
 
 Post.propTypes = {
-	increase: PropTypes.func,
+	getPostId: PropTypes.func,
 	isLoading: PropTypes.bool
 };

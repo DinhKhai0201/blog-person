@@ -6,7 +6,7 @@ import axios from 'axios';
  * @param {*} dataBody : object // data body
  * @param {*} token: string // token auth2 from server
  */
-export const Api = (url, method, dataBody = null, token = null) => {
+export const Api = (url, method, dataBody = null, token = null, params = null) => {
     let header =  {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -16,7 +16,8 @@ export const Api = (url, method, dataBody = null, token = null) => {
         method: method,
         url: url, 
         headers: header,
-        data: dataBody
+        data: dataBody,
+        params
     }
     if (!token) {
         delete header.Authorization;
@@ -24,8 +25,10 @@ export const Api = (url, method, dataBody = null, token = null) => {
     if (!dataBody) {
         delete axiosConfig.data;
     }
-
-    
+    if (!params) {
+        delete axiosConfig.params;
+    }
+    console.log(axiosConfig);
     return axios(axiosConfig)
       
 }

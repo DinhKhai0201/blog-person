@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Post from '../post/post';
+import getPostIdAction from '../../actions/postActions/actionCreators';
 import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state) => {
@@ -10,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+    	getPostId: (id) => dispatch(getPostIdAction(id))
     }
 }
 

@@ -1,4 +1,4 @@
-import { HOME_INCREASE_NUMBER } from '../../actions/homeActions/actionName.js'
+import { HOME_RENDER_POST } from '../../actions/homeActions/actionName.js'
 
 /*
 *
@@ -8,12 +8,8 @@ import { HOME_INCREASE_NUMBER } from '../../actions/homeActions/actionName.js'
 */
 export default function homeReducers(state = {}, action) {
     switch (action.type) {
-        case HOME_INCREASE_NUMBER:
-            return { ...state, count: action.number + 1 };
-        case "HOME_SEARCH_TABLE":
-            let rewDatatables = [];
-            rewDatatables.push(action.payload);
-            return { ...state, dataTables: rewDatatables }
+        case HOME_RENDER_POST:
+            return { ...state, post: action.post };
         default:
             return state;
     }

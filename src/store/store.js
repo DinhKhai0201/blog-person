@@ -11,8 +11,6 @@ const history = createBrowserHistory();
 /**
  * Get token saved
  */
-
-
 let userAccount = GetToken() || {
     accesstoken: '',
     isAuthenticated: false
@@ -26,9 +24,10 @@ const initState = {
             }
         },
         home: {
-            count: 0,
-            dataTables: []
+            post: [],
+            category: []
         },
+        postId: [],
         ui: {
             loading: false
         }
@@ -36,7 +35,6 @@ const initState = {
     /**
      * configure redux devtools
      */
-console.log(initState);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 /**
  * Export store

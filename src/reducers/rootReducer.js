@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import homeReducers from './homeReducers/homeReducers';
 import accountReducers from './accountReducers/accountReducers';
+import postReducers from './accountReducers/accountReducers';
 import { connectRouter } from 'connected-react-router'
 
 const uiReducer = (state = {}, action) => {
@@ -18,5 +19,6 @@ export const rootReducer = (history) => combineReducers({
     ui: uiReducer,
     home: homeReducers,
     account: accountReducers,
+    post: postReducers,
     router: connectRouter(history),
 })

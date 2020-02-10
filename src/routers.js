@@ -15,7 +15,7 @@ const routes =[
 		main: ()=> <HomeContainer />
 	},
 	{
-		path: "/post",
+		path: "/post/:id",
 		exact: false,
 		main: ()=> <PostContainer />
 	},
