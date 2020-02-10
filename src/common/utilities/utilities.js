@@ -1,16 +1,16 @@
 
-const Token_remote_Key = 'Token_remote';
+const Token_remote_Key = 'auth';
 
-export const GetTokenPersitant = () => JSON.parse(localStorage.getItem(Token_remote_Key));
+export const GetToken = () => JSON.parse(localStorage.getItem(Token_remote_Key));
 
-export const SetTokenPersitant = (token) => {
+export const SetToken = (token) => {
     localStorage.setItem(Token_remote_Key, JSON.stringify({
         accesstoken: token,
         isAuthenticated: true
     }))
 }
 
-export const RemoveTokenPersitant = () => {
+export const RemoveToken = () => {
     localStorage.removeItem(Token_remote_Key)
 }
 

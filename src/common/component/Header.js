@@ -1,5 +1,5 @@
 import React from 'react';
-import { RemoveTokenPersitant } from '../utilities/utilities';
+import { RemoveToken } from '../utilities/utilities';
 import '../../styles/header.css'
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ var jpFlag = require('../../assert/common/jp.png');
 class Header extends React.Component {
 
 	logOut = () => {
-		RemoveTokenPersitant();
+		RemoveToken();
 	}
 
 	// pushMenu(e) {

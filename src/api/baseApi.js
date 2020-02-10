@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 /**
  * @param {*} url : string // url remote
@@ -5,25 +6,26 @@
  * @param {*} dataBody : object // data body
  * @param {*} token: string // token auth2 from server
  */
-export const Ajax = (url, method, dataBody = null, token = '') => {
-    let header = {
+export const Api = (url, method, dataBody = null, token = null) => {
+    let header =  {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': token
+    }
+    let axiosConfig =  {
         method: method,
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': token
-        },
-        body: JSON.stringify(dataBody),
+        url: url, 
+        headers: header,
+        data: dataBody
     }
-
-    // remove body if method is get or it not has body
-    if (!dataBody) {
-        delete header.body;
-    }
-
     if (!token) {
-        delete header.headers.Authorization;
+        delete header.Authorization;
+    }
+    if (!dataBody) {
+        delete axiosConfig.data;
     }
 
-    return fetch(url, header);
+    
+    return axios(axiosConfig)
+      
 }

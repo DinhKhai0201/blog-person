@@ -4,20 +4,27 @@ import { middleware } from '../middleware/middleware'
 import thunk from 'redux-thunk'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
-import { GetTokenPersitant } from '../common/utilities/utilities';
+import { GetToken } from '../common/utilities/utilities';
 
 const history = createBrowserHistory();
 
 /**
  * Get token saved
  */
-let tokenPersitance = GetTokenPersitant() || {
+
+
+let userAccount = GetToken() || {
     accesstoken: '',
     isAuthenticated: false
+   
 };
-
 const initState = {
-        account: tokenPersitance,
+        account: {...userAccount,
+            register: {
+                result: false,
+                message: ''
+            }
+        },
         home: {
             count: 0,
             dataTables: []
@@ -29,6 +36,7 @@ const initState = {
     /**
      * configure redux devtools
      */
+console.log(initState);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 /**
  * Export store
