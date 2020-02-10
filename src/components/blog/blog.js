@@ -11,7 +11,7 @@ export default class Blog extends Component {
         const { isLoading } = this.props;
         return (
             <Fragment>
-            
+
             </Fragment>
         )
     }

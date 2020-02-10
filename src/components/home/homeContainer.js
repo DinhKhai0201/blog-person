@@ -5,9 +5,7 @@ import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state) => {
     return {
-        countNumber: state.home.count,
-        isLoading: state.ui.loading,
-        dataTables: state.home.dataTables
+        isLoading: state.ui.loading
     }
 }
 
