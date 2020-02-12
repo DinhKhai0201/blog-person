@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from '../home/home';
-import renderPostAction from '../../actions/homeActions/actionCreators';
+import { renderPostAction, increaseViewPostAction } from '../../actions/homeActions/actionCreators';
 import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        renderPost: () => dispatch(renderPostAction())
+        renderPost: () => dispatch(renderPostAction()),
+        increaseView: (id, view) => dispatch(increaseViewPostAction(id, view))
     }
 }
 

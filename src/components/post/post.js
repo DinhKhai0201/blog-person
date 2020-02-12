@@ -6,15 +6,13 @@ import { Redirect } from 'react-router-dom';
 export default class Post extends Component {
 
 	componentDidMount(){
+		// window.location.reload();
 		let id = this.props.match.params.id;
 		let postId = this.props.getPostId(id);
 	}
 	render() {
 		const { isLoading, post } = this.props;
 		let renderPost;
-		if (post === null) {
-			return <Redirect to ="*"/>
-		}
 		if (post && post.length > 0) {
 			renderPost = post.map((value, key) => {
 				return (

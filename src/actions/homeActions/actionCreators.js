@@ -1,11 +1,11 @@
-import { HOME_RENDER_POST } from '../../actions/homeActions/actionName.js';
+import { HOME_RENDER_POST, HOME_INCREASE_VIEW_POST } from '../../actions/homeActions/actionName.js';
 import HomeApi from '../../api/home.js';
 
 /*
 * @param: number: number //  number to increase
 *
 */
-export default function renderPostAction() {
+export function renderPostAction() {
     return (dispatch) => {
         HomeApi.renderPost().then(res => {
         	console.log(res);
@@ -13,6 +13,20 @@ export default function renderPostAction() {
                      dispatch({
                         type: HOME_RENDER_POST,
                         post: res.data
+                    })
+                } 
+            }
+        );
+    }
+}
+
+export function increaseViewPostAction(id, view) {
+    return (dispatch) => {
+        HomeApi.increaseViewPost(id, view).then(res => {
+        	console.log(res);
+            if (res && res.data && res.data.success == true) {
+                     dispatch({
+                        type: HOME_INCREASE_VIEW_POST
                     })
                 } 
             }

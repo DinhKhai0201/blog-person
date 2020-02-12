@@ -10,7 +10,7 @@ export default function postReducers(state = {}, action) {
     console.log(action.type);
     switch (action.type) { 
         case POST_GET_ID:
-            return { ...state, data: [...state.data, action.data]  };
+            return { ...state, data: [action.data]  };
         case POST_GET_ID_NULL:
             return { ...state, data: null };
         default:
