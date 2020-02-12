@@ -14,35 +14,35 @@ class Header extends React.Component {
 		RemoveToken();
 	}
 
-	// pushMenu(e) {
-	//     e.preventDefault();
-	//     var body = document.body;
-	//     if (window.innerWidth > 768) {
-	//         if (body.className.indexOf('sidebar-collapse') === -1) {
-	//             body.className += ' sidebar-collapse';
-	//         } else {
-	//             body.className = body.className.replace(' sidebar-collapse', '');
-	//         }
-	//     } else {
-	//         if (body.className.indexOf('sidebar-open') === -1) {
-	//             body.className += ' sidebar-open';
-	//         } else {
-	//             body.className = body.className.replace(' sidebar-open', '');
-	//         }
-	//     }
-	// }
+	pushMenu(e) {
+	    e.preventDefault();
+	    var body = document.body;
+	    if (window.innerWidth > 768) {
+	        if (body.className.indexOf('sidebar-collapse') === -1) {
+	            body.className += ' sidebar-collapse';
+	        } else {
+	            body.className = body.className.replace(' sidebar-collapse', '');
+	        }
+	    } else {
+	        if (body.className.indexOf('sidebar-open') === -1) {
+	            body.className += ' sidebar-open';
+	        } else {
+	            body.className = body.className.replace(' sidebar-open', '');
+	        }
+	    }
+	}
 
 	render() {
 		return (
 			<header>
 				<nav>
-					<h1><Link to="/">Home</Link></h1>
+					<h1><Link to="/">KBlog</Link></h1>
 					<ul className ="navbar-header">
-						<li>
+						{/* <li>
 							<Link to="/post">Post</Link>
-						</li>
+						</li> */}
 						<li>
-							<Link to="/blog">Blog</Link>
+							<Link to="/category">Category</Link>
 						</li>
 						<li>
 							<Link to="/contact">Contact</Link>

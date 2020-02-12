@@ -30,7 +30,7 @@ const routes =[
 		main: ()=> <AccountContainer />
 	},
 	{
-		path: "/blog",
+		path: "/compose",
 		exact: false,
 		main: ()=> <BlogContainer />
 	},

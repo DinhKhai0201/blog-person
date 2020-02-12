@@ -1,112 +1,131 @@
+.login .group input[type="text"],
+.login .group input[type="password"] {
+    width: 100%;
+    border: none;
+    color: #aaabb0;
+    padding: 14px 10px 14px 45px;
+    margin-top: 20px;
+    background: #33374a;
+    z-index: 2;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    position: relative;
+}
 
- .login .group input[type="text"], .login .group input[type="password"] {
-     width: 100%;
-     border: none;
-     color: #aaabb0;
-     padding: 14px 10px 14px 45px;
-     margin-top: 20px;
-     background: #33374a;
-     z-index: 2;
-     font-family: 'Lato', sans-serif;
-     font-size: 12px;
-     letter-spacing: 1px;
-     position: relative;
+.login .group input[type="text"]:focus+label::before,
+.login .group input[type="password"]:focus+label::before {
+    width: 100%;
 }
- .login .group input[type="text"]:focus + label::before, .login .group input[type="password"]:focus + label::before {
-     width: 100%;
+
+.register .group input[type="text"],
+.register .group input[type="password"] {
+    width: 100%;
+    border: none;
+    color: #fff;
+    padding: 14px 10px 14px 45px;
+    margin-top: 20px;
+    background: #f47471;
+    z-index: 2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 1px;
+    position: relative;
 }
- .register .group input[type="text"], .register .group input[type="password"] {
-     width: 100%;
-     border: none;
-     color: #fff;
-     padding: 14px 10px 14px 45px;
-     margin-top: 20px;
-     background: #f47471;
-     z-index: 2;
-     font-family: 'Lato', sans-serif;
-     font-weight: 300;
-     font-size: 12px;
-     letter-spacing: 1px;
-     position: relative;
+
+.register .group input[type="text"]::placeholder,
+.register .group input[type="password"]::placeholder {
+    color: #fff;
 }
- .register .group input[type="text"]::placeholder, .register .group input[type="password"]::placeholder {
-     color: #fff;
+
+.register .group input[type="text"]:focus+label::before,
+.register .group input[type="password"]:focus+label::before {
+    width: 100%;
 }
- .register .group input[type="text"]:focus + label::before, .register .group input[type="password"]:focus + label::before {
-     width: 100%;
+
+.panel .login input[type="submit"],
+.panel .register input[type="submit"] {
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 10px 0;
+    width: 150px;
+    background: transparent;
+    border-radius: 0 50px 50px 0;
+    border-left: none !important;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
- .panel .login input[type="submit"], .panel .register input[type="submit"] {
-     align-self: flex-start;
-     margin-top: 20px;
-     padding: 10px 0;
-     width: 150px;
-     background: transparent;
-     border-radius: 0 50px 50px 0;
-     border-left: none !important;
-     letter-spacing: 1px;
-     cursor: pointer;
-}
- @keyframes loginOpen {
-     0% {
-         transform: translateX(140px);
+
+@keyframes loginOpen {
+    0% {
+        transform: translateX(140px);
     }
-     50% {
-         transform: translateX(-145px);
+    50% {
+        transform: translateX(-145px);
     }
-     100% {
-         transform: translateX(140px);
-         z-index: -1;
+    100% {
+        transform: translateX(140px);
+        z-index: -1;
     }
 }
- @keyframes registerOpen {
-     0% {
-         transform: translateX(-140px);
+
+@keyframes registerOpen {
+    0% {
+        transform: translateX(-140px);
     }
-     50% {
-         transform: translateX(145px);
+    50% {
+        transform: translateX(145px);
     }
-     100% {
-         transform: translateX(-140px);
-    }
-}
- @keyframes loginClose {
-     0% {
-         transform: translateX(140px);
-         z-index: -1;
-    }
-     50% {
-         transform: translateX(-145px);
-    }
-     100% {
-         transform: translateX(140px);
-         z-index: 1;
+    100% {
+        transform: translateX(-140px);
     }
 }
- @keyframes registerClose {
-     0% {
-         transform: translateX(-140px);
+
+@keyframes loginClose {
+    0% {
+        transform: translateX(140px);
+        z-index: -1;
     }
-     50% {
-         transform: translateX(145px);
+    50% {
+        transform: translateX(-145px);
     }
-     100% {
-         transform: translateX(-140px);
+    100% {
+        transform: translateX(140px);
+        z-index: 1;
     }
 }
- * {
-     box-sizing: border-box;
+
+@keyframes registerClose {
+    0% {
+        transform: translateX(-140px);
+    }
+    50% {
+        transform: translateX(145px);
+    }
+    100% {
+        transform: translateX(-140px);
+    }
 }
- input {
-     outline: none;
+
+* {
+    box-sizing: border-box;
 }
+
+input {
+    outline: none;
+}
+
 .login-register {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 100vh;
-     font-family: 'Lato', sans-serif;
-     color: #aaabb0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    color: #aaabb0;
 }
+
+
 /* .bg {
      width: 100%;
      height: 50vh;
@@ -119,182 +138,213 @@
      z-index: -1;
      transform: skewY(5deg);
 }*/
- .panel {
-     height: auto;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+
+.panel {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 50px auto
 }
- .panel .login {
-     width: 300px;
-     height: 380px;
-     background: #292c3b;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     transform: translateX(140px);
-     position: relative;
-     z-index: 1;
-     transition: filter 0.5s;
+
+.panel .login {
+    width: 300px;
+    height: 380px;
+    background: #292c3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(140px);
+    position: relative;
+    z-index: 1;
+    transition: filter 0.5s;
 }
- .panel .login input[type="submit"] {
-     border: #f25d59 solid 1px;
-     color: #f25d59;
+
+.panel .login input[type="submit"] {
+    border: #f25d59 solid 1px;
+    color: #f25d59;
 }
- .panel .register {
-     transform: translateX(-140px);
-     position: relative;
+
+.panel .register {
+    transform: translateX(-140px);
+    position: relative;
 }
- .panel .register .button-open, .panel .register .button-close {
-     position: absolute;
-     width: 20px;
-     height: 20px;
-     top: 15px;
-     right: 15px;
-     cursor: pointer;
-     transition: transform 0.4s;
-     z-index: 9;
+
+.panel .register .button-open,
+.panel .register .button-close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.4s;
+    z-index: 9;
 }
- .panel .register .button-open::before, .panel .register .button-close::before {
-     content: '';
-     position: absolute;
-     width: 2px;
-     height: 100%;
-     background: #fff;
-     left: 10px;
+
+.panel .register .button-open::before,
+.panel .register .button-close::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    left: 10px;
 }
- .panel .register .button-open::after, .panel .register .button-close::after {
-     content: '';
-     position: absolute;
-     width: 2px;
-     height: 100%;
-     background: #fff;
-     left: 10px;
-     transform: rotate(90deg);
+
+.panel .register .button-open::after,
+.panel .register .button-close::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    left: 10px;
+    transform: rotate(90deg);
 }
- .panel .register .inner {
-     filter: blur(5px);
-     background: #f25d59;
-     box-shadow: 5px 14px 20px 0 #f68b88;
-     width: 100%;
-     width: 340px;
-     height: 440px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     transition: filter 0.5s;
+
+.panel .register .inner {
+    filter: blur(5px);
+    background: #f25d59;
+    box-shadow: 5px 14px 20px 0 #f68b88;
+    width: 100%;
+    width: 340px;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: filter 0.5s;
 }
- .panel .register input[type="submit"] {
-     border: #fff solid 1px;
-     color: #fff;
+
+.panel .register input[type="submit"] {
+    border: #fff solid 1px;
+    color: #fff;
 }
- .register h1 {
-     text-align: center;
-     font-weight: 100;
-     letter-spacing: 2px;
-     margin-top: 0;
-     color: #fff;
+
+.register h1 {
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin-top: 0;
+    color: #fff;
 }
- .register .group {
-     width: 100%;
-     position: relative;
+
+.register .group {
+    width: 100%;
+    position: relative;
 }
- .register .group i {
-     color: #fff;
-     position: absolute;
-     top: 36px;
-     left: 15px;
-     z-index: 3;
-     font-size: 13px;
-     opacity: 0.8;
+
+.register .group i {
+    color: #fff;
+    position: absolute;
+    top: 36px;
+    left: 15px;
+    z-index: 3;
+    font-size: 13px;
+    opacity: 0.8;
 }
- .register .group label {
-     display: block;
-     position: absolute;
-     width: 100%;
-     height: 45px;
-     z-index: 1;
-     background: #f69492;
-     top: 19px;
+
+.register .group label {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    z-index: 1;
+    background: #f69492;
+    top: 19px;
 }
- .register .group label::before {
-     content: '';
-     position: absolute;
-     width: 0;
-     height: 100%;
-     background: #f04641;
-     transition: width 0.5s;
+
+.register .group label::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: #f04641;
+    transition: width 0.5s;
 }
- .login h1 {
-     text-align: center;
-     font-weight: 100;
-     letter-spacing: 2px;
-     margin-top: 0;
+
+.login h1 {
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin-top: 0;
 }
- .login .group {
-     position: relative;
-     width: 100%;
+
+.login .group {
+    position: relative;
+    width: 100%;
 }
- .login .group i {
-     color: #f25d59;
-     position: absolute;
-     top: 36px;
-     left: 15px;
-     z-index: 3;
-     font-size: 13px;
-     opacity: 0.8;
+
+.login .group i {
+    color: #f25d59;
+    position: absolute;
+    top: 36px;
+    left: 15px;
+    z-index: 3;
+    font-size: 13px;
+    opacity: 0.8;
 }
- .login .group label {
-     display: block;
-     position: absolute;
-     width: 100%;
-     height: 45px;
-     z-index: 1;
-     background: #42475f;
-     top: 19px;
+
+.login .group label {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    z-index: 1;
+    background: #42475f;
+    top: 19px;
 }
- .login .group label::before {
-     content: '';
-     position: absolute;
-     width: 0;
-     height: 100%;
-     background: #f25d59;
-     transition: width 0.5s;
+
+.login .group label::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: #f25d59;
+    transition: width 0.5s;
 }
- .button-close {
-     visibility: hidden;
+
+.button-close {
+    visibility: hidden;
 }
- input[id="switch-open"]:checked ~ .login {
-     filter: blur(5px);
-     animation: loginOpen forwards 0.8s;
+
+input[id="switch-open"]:checked~.login {
+    filter: blur(5px);
+    animation: loginOpen forwards 0.8s;
 }
- input[id="switch-open"]:checked ~ .register {
-     animation: registerOpen forwards 0.8s;
+
+input[id="switch-open"]:checked~.register {
+    animation: registerOpen forwards 0.8s;
 }
- input[id="switch-open"]:checked ~ .register > .inner {
-     filter: blur(0);
+
+input[id="switch-open"]:checked~.register>.inner {
+    filter: blur(0);
 }
- input[id="switch-open"]:checked ~ .register .button-open {
-     visibility: hidden;
-     transform: rotate(45deg);
+
+input[id="switch-open"]:checked~.register .button-open {
+    visibility: hidden;
+    transform: rotate(45deg);
 }
- input[id="switch-open"]:checked ~ .register .button-close {
-     visibility: visible;
-     transform: rotate(45deg);
+
+input[id="switch-open"]:checked~.register .button-close {
+    visibility: visible;
+    transform: rotate(45deg);
 }
- input[id="switch-close"]:checked ~ .login {
-     animation: loginClose forwards 0.8s;
+
+input[id="switch-close"]:checked~.login {
+    animation: loginClose forwards 0.8s;
 }
- input[id="switch-close"]:checked ~ .register {
-     animation: registerClose forwards 0.8s;
+
+input[id="switch-close"]:checked~.register {
+    animation: registerClose forwards 0.8s;
 }
- input[id="switch-close"]:checked ~ .register > .inner {
-     filter: blur(5px);
+
+input[id="switch-close"]:checked~.register>.inner {
+    filter: blur(5px);
 }
- input[type="radio"] {
-     display: none;
+
+input[type="radio"] {
+    display: none;
 }
- 

@@ -42,7 +42,7 @@ class Footer extends React.Component {
                             <ul className="social-icons">
                                 <li><a className="facebook" href="#"><i className="fa fa-facebook" /></a></li>
                                 <li><a className="twitter" href="#"><i className="fa fa-twitter" /></a></li>
-                                <li><a className="dribbble" href="#"><i className="fa fa-dribbble" /></a></li>
+                                <li><a className="github" href="#"><i className="fa fa-github" /></a></li>
                                 <li><a className="linkedin" href="#"><i className="fa fa-linkedin" /></a></li>
                             </ul>
                         </div>
