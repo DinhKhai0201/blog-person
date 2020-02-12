@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import homeReducers from './homeReducers/homeReducers';
 import accountReducers from './accountReducers/accountReducers';
-import postReducers from './accountReducers/accountReducers';
+import postReducers from './postReducers/postReducers';
 import { connectRouter } from 'connected-react-router'
 
 const uiReducer = (state = {}, action) => {

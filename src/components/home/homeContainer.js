@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 const mapStateToProps = (state) => {
     return {
         isLoading: state.ui.loading,
-        post: state.home.post
+        posts: state.home.posts
     }
 }
 

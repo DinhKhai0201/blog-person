@@ -1,4 +1,4 @@
-import { POST_GET_ID } from '../../actions/postActions/actionName.js'
+import { POST_GET_ID, POST_GET_ID_NULL } from '../../actions/postActions/actionName.js'
 
 /*
 *
@@ -7,9 +7,12 @@ import { POST_GET_ID } from '../../actions/postActions/actionName.js'
 *
 */
 export default function postReducers(state = {}, action) {
-    switch (action.type) {
+    console.log(action.type);
+    switch (action.type) { 
         case POST_GET_ID:
-            return { ...state, postId: action.postId };
+            return { ...state, data: [...state.data, action.data]  };
+        case POST_GET_ID_NULL:
+            return { ...state, data: null };
         default:
             return state;
     }

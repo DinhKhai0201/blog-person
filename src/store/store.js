@@ -24,10 +24,12 @@ const initState = {
             }
         },
         home: {
-            post: [],
+            posts: [],
             category: []
         },
-        postId: [],
+        post: {
+            data: []
+        },
         ui: {
             loading: false
         }

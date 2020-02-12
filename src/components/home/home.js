@@ -20,11 +20,11 @@ export default class Home extends Component {
 		e.preventDefault();
 	}
 	render() {
-		const { isLoading, post } = this.props;
-		console.log(post);
+		const { isLoading, posts } = this.props;
+		console.log(posts);
 		let allPost =[];
-		if (post.length > 0){
-			allPost = post.map((value, key) => {
+		if (posts.length > 0){
+			allPost = posts.map((value, key) => {
 				return (
 						<div className="col-md-6" key ={key}>
 								<div className="well" >
@@ -55,5 +55,5 @@ export default class Home extends Component {
 
 Home.propTypes = {
 	isLoading: PropTypes.bool,
-	post: PropTypes.array
+	posts: PropTypes.array
 }

@@ -1,4 +1,4 @@
-import { POST_GET_ID } from '../../actions/postActions/actionName.js';
+import { POST_GET_ID, POST_GET_ID_NULL } from '../../actions/postActions/actionName.js';
 import PostApi from '../../api/post.js';
 
 /*
@@ -8,14 +8,17 @@ import PostApi from '../../api/post.js';
 export default function getPostIdAction(id) {
     return (dispatch) => {
         PostApi.getPostId(id).then(res => {
-        	console.log(res);
             if (res && res.data) {
-                     dispatch({
-                        type: POST_GET_ID,
-                        postId: res.data
-                    })
-                } 
-            }
-        );
+                dispatch({
+                    type: POST_GET_ID,
+                    data: res.data
+                })
+            } else {
+                dispatch({
+                    type: POST_GET_ID_NULL
+                  
+                })
+            } 
+        });
     }
 }
