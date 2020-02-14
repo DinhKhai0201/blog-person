@@ -1,4 +1,4 @@
-import { HOME_RENDER_POST, HOME_INCREASE_VIEW_POST } from '../../actions/homeActions/actionName.js';
+import { HOME_RENDER_POST, HOME_INCREASE_VIEW_POST, HOME_GET_CATEGORY } from '../../actions/homeActions/actionName.js';
 import HomeApi from '../../api/home.js';
 
 /*
@@ -27,6 +27,21 @@ export function increaseViewPostAction(id, view) {
             if (res && res.data && res.data.success == true) {
                      dispatch({
                         type: HOME_INCREASE_VIEW_POST
+                    })
+                } 
+            }
+        );
+    }
+}
+
+export function getCategoryAction() {
+    return (dispatch) => {
+        HomeApi.getCategory().then(res => {
+        	console.log(res);
+            if (res && res.data) {
+                     dispatch({
+                        type: HOME_GET_CATEGORY,
+                        category: res.data
                     })
                 } 
             }

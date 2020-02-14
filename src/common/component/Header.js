@@ -1,17 +1,21 @@
 import React from 'react';
 import { RemoveToken } from '../utilities/utilities';
 import '../../styles/header.css'
-import { BrowserRouter as Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { GetToken } from '../utilities/utilities';
 
-var logo = require('../../assert/common/logo.png');
-var miniLogo = require('../../assert/common/minilogo.png');
-var usFlag = require('../../assert/common/us.png');
-var jpFlag = require('../../assert/common/jp.png');
 
 class Header extends React.Component {
 
+	componentDidMount() {
+		if (GetToken() !== false) {
+            this.props.infoUser(GetToken().accesstoken);
+        }
+	}
 	logOut = () => {
 		RemoveToken();
+		return <Redirect to="/" />
 	}
 
 	pushMenu(e) {
@@ -33,23 +37,25 @@ class Header extends React.Component {
 	}
 
 	render() {
+		let { infoLogin } = this.props;
+		let renderAfterLogin;
+		if (infoLogin && infoLogin.result && infoLogin.result.success == true) {
+			renderAfterLogin = <li onClick ={this.logOut}>{infoLogin.result.tel},logout</li>
+		} else {
+			renderAfterLogin = <li> <Link to="/login">Login</Link></li>
+		}
 		return (
 			<header>
 				<nav>
 					<h1><Link to="/">KBlog</Link></h1>
 					<ul className ="navbar-header">
-						{/* <li>
-							<Link to="/post">Post</Link>
-						</li> */}
 						<li>
 							<Link to="/category">Category</Link>
 						</li>
 						<li>
 							<Link to="/contact">Contact</Link>
 						</li>
-						<li>
-							<Link to="/login">Login</Link>
-						</li>
+						{renderAfterLogin}
 					</ul>
 				</nav>
 
@@ -58,3 +64,7 @@ class Header extends React.Component {
 	}
 }
 export default Header;
+
+Header.propTypes = {
+    infoUser: PropTypes.func
+}

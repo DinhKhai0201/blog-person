@@ -10,7 +10,7 @@ import routes from './routers';
 import registerServiceWorker from './registerServiceWorker';
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter } from 'connected-react-router'
-import Header from './common/component/Header'
+import {HeaderContainer} from './common/component/HeaderContainer'
 import Footer from './common/component/Footer'
 import './styles/font-awesome.min.css'
 
@@ -47,7 +47,7 @@ let showRoute =(routes) => {
 render(
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
-			<Header />
+			<HeaderContainer />
 			<Switch>
 				{showRoute(routes)}
 			</Switch>

@@ -19,9 +19,6 @@ export default class Account extends Component {
 
     }
     componentDidMount() {
-        if (GetToken() !== false) {
-            this.props.infoUser(GetToken().accesstoken);
-        }
     }
     login = () => {
         let { username, password } = this.state;
@@ -99,9 +96,6 @@ export default class Account extends Component {
 Account.propTypes = {
     login: PropTypes.func,
     register: PropTypes.func,
-    infoUser: PropTypes.func,
     isAuth: PropTypes.bool, 
     message: PropTypes.string,
-    message: PropTypes.string,
-    infoLogin: PropTypes.array
 }

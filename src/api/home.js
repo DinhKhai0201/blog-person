@@ -14,9 +14,21 @@ let HomeApi = {
             return false;
         })
        
-    },
+    }, 
     increaseViewPost(id,view) {
         return Api(url + "/post/incView?id="+ id+"&view=" + view, "post")
+        .then((res) => {
+            console.log("RESPONSE RECEIVED: ", res);
+            return res;
+        })
+        .catch((err) => {
+            console.log("AXIOS ERROR: ", err);
+            return false;
+        })
+       
+    },
+    getCategory() {
+        return Api(url + "/category/all", "get")
         .then((res) => {
             console.log("RESPONSE RECEIVED: ", res);
             return res;

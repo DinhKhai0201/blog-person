@@ -14,7 +14,8 @@ export default class Home extends Component {
         };
     }
     componentDidMount(){
-	    this.props.renderPost();
+		this.props.renderPost();
+		this.props.getCategory();
 	}
 	onChangeSearch = (e) => {
 		e.preventDefault();
@@ -23,8 +24,8 @@ export default class Home extends Component {
 		this.props.increaseView(id, view);
 	}
 	render() {
-		const { isLoading, posts } = this.props;
-		console.log(posts);
+		const { isLoading, posts, categories } = this.props;
+		console.log("cat",categories);
 		let allPost =[];
 		if (posts.length > 0){
 			allPost = posts.map((value, key) => {
@@ -67,5 +68,7 @@ export default class Home extends Component {
 Home.propTypes = {
 	isLoading: PropTypes.bool,
 	posts: PropTypes.array,
-	increaseView: PropTypes.func
+	categories: PropTypes.array,
+	increaseView: PropTypes.func,
+	getCategory: PropTypes.func
 }

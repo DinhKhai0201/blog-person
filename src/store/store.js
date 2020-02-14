@@ -14,8 +14,8 @@ const history = createBrowserHistory();
 let userAccount = GetToken() || {
     accesstoken: '',
     isAuthenticated: false
-   
 };
+
 const initState = {
         account: {...userAccount,
             register: {
