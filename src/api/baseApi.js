@@ -10,7 +10,7 @@ export const Api = (url, method, dataBody = null, token = null, params = null) =
     let header =  {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': token
+        'authorization': token
     }
     let axiosConfig =  {
         method: method,
@@ -20,7 +20,7 @@ export const Api = (url, method, dataBody = null, token = null, params = null) =
         params
     }
     if (!token) {
-        delete header.Authorization;
+        delete header.authorization;
     }
     if (!dataBody) {
         delete axiosConfig.data;

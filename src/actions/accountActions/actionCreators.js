@@ -1,4 +1,4 @@
-import { ACCOUNT_LOGIN, ACCOUNT_LOGIN_FAIL, ACCOUNT_REGISTER } from '../../actions/accountActions/actionName.js';
+import { ACCOUNT_LOGIN, ACCOUNT_LOGIN_FAIL, ACCOUNT_REGISTER, ACCOUNT_INFO_USER } from '../../actions/accountActions/actionName.js';
 import AccountApi from '../../api/account.js';
 
 /*
@@ -39,6 +39,25 @@ export  function registerUser(username, email,  password){
                         type: ACCOUNT_REGISTER,
                         result: res.data.result,
                         message:  res.data.message
+                    })
+                } 
+            }
+        );
+
+    }
+  
+}
+
+/*
+* @param: token: string 
+*/
+export  function infoUser(token){
+    return (dispatch) => {
+        AccountApi.infoUser(token).then(res => {
+            if (res && res.data) {
+                     dispatch({
+                        type: ACCOUNT_INFO_USER,
+                        result: res.data
                     })
                 } 
             }

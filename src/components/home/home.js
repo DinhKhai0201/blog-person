@@ -49,6 +49,14 @@ export default class Home extends Component {
 							{allPost}
 						</div>{/*/.row*/}
 					</div>{/*/.container*/}
+					<div className="section" id="work"><h1>Post 2020</h1><hr /></div>
+					<div className="container">
+						<div className="row">
+							{allPost}
+						</div>{/*/.row*/}
+					</div>{/*/.container*/}
+					<div className="section" id="work"><h1>Post 2019</h1><hr /></div>
+					<div className="container"></div>
 				</div>
 
 			</Fragment>

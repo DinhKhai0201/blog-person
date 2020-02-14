@@ -21,7 +21,8 @@ const initState = {
             register: {
                 result: false,
                 message: ''
-            }
+            },
+            infoLogin: []
         },
         home: {
             posts: [],

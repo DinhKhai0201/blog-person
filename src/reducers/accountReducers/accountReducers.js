@@ -1,4 +1,4 @@
-import { ACCOUNT_LOGIN, ACCOUNT_LOGIN_FAIL , ACCOUNT_REGISTER } from '../../actions/accountActions/actionName.js'
+import { ACCOUNT_LOGIN, ACCOUNT_LOGIN_FAIL , ACCOUNT_REGISTER, ACCOUNT_INFO_USER} from '../../actions/accountActions/actionName.js'
 import { SetToken } from '../../common/utilities/utilities';
 
 /*
@@ -16,6 +16,8 @@ export default function accountReducers(state = {}, action) {
             return { ...state};
         case ACCOUNT_REGISTER:
             return { ...state, register : {result: action.result, message: action.message} };
+        case ACCOUNT_INFO_USER:
+            return { ...state, infoLogin : {result: action.result} };
         default:
             return state;
     }

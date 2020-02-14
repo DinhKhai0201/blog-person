@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import '../../styles/login.css'
 import PropTypes from 'prop-types';
+import { GetToken } from '../../common/utilities/utilities';
 
 export default class Account extends Component {
 
@@ -16,6 +17,11 @@ export default class Account extends Component {
             message: ""
         };
 
+    }
+    componentDidMount() {
+        if (GetToken() !== false) {
+            this.props.infoUser(GetToken().accesstoken);
+        }
     }
     login = () => {
         let { username, password } = this.state;
@@ -93,6 +99,9 @@ export default class Account extends Component {
 Account.propTypes = {
     login: PropTypes.func,
     register: PropTypes.func,
+    infoUser: PropTypes.func,
     isAuth: PropTypes.bool, 
-    message: PropTypes.string
+    message: PropTypes.string,
+    message: PropTypes.string,
+    infoLogin: PropTypes.array
 }

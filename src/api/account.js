@@ -46,6 +46,17 @@ let AccountApi = {
         })
         // SetToken('_fakeToken_');
         // return { username, password };
+    },
+    infoUser(token) {
+        return Api(url + "/auth//token/verify", "get", null, token)
+        .then((res) => {
+            console.log("RESPONSE RECEIVED: ", res);
+            return res;
+        })
+        .catch((err) => {
+            console.log("AXIOS ERROR: ", err);
+            return false;
+        })
     }
 }
 export default AccountApi;
