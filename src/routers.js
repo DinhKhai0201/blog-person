@@ -3,6 +3,7 @@ import React from 'react';
 
 import { HomeContainer } from './components/home/homeContainer';
 import { PostContainer } from './components/post/postContainer';
+import { CategoryContainer } from './components/category/categoryContainer';
 import { AccountContainer } from './components/account/accountContainer';
 import { ContactContainer } from './components/contact/contactContainer';
 import { BlogContainer } from './components/blog/blogContainer';
@@ -18,6 +19,11 @@ const routes =[
 		path: "/post/:id",
 		exact: false,
 		main: ()=> <PostContainer />
+	},
+	{
+		path: "/category/:slug",
+		exact: false,
+		main: ()=> <CategoryContainer />
 	},
 	{
 		path: "/contact",
