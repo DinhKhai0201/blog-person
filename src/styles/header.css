@@ -60,7 +60,7 @@ ul.navbar-header li a:hover {
 nav a:hover,
 a:hover {
     color: #C18055;
-    background: #fff;
+    /* background: #fff; */
 }
 
 div#content {

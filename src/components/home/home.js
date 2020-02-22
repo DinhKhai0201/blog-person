@@ -25,7 +25,6 @@ export default class Home extends Component {
 	}
 	render() {
 		const { isLoading, posts, categories } = this.props;
-		console.log("cat",categories);
 		let allPost =[];
 		if (posts.length > 0){
 			allPost = posts.map((value, key) => {

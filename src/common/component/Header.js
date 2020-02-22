@@ -11,11 +11,12 @@ class Header extends React.Component {
 	componentDidMount() {
 		if (GetToken() !== false) {
             this.props.infoUser(GetToken().accesstoken);
-        }
+		}
+		this.props.getCategory();
 	}
 	logOut = () => {
 		RemoveToken();
-		return <Redirect to="/" />
+		setTimeout(function(){window.location.reload(); }, 3000);
 	}
 
 	pushMenu(e) {
@@ -37,21 +38,30 @@ class Header extends React.Component {
 	}
 
 	render() {
-		let { infoLogin } = this.props;
-		let renderAfterLogin;
+		let { infoLogin, categories } = this.props;
+		// console.log("cat",categories);
+
+		let renderAfterLogin, cats;
 		if (infoLogin && infoLogin.result && infoLogin.result.success == true) {
-			renderAfterLogin = <li onClick ={this.logOut}>{infoLogin.result.tel},logout</li>
+			renderAfterLogin = <li ><Link to="/" onClick ={this.logOut}> {infoLogin.result.tel}, logout</Link></li>
 		} else {
 			renderAfterLogin = <li> <Link to="/login">Login</Link></li>
+		}
+		if (categories && categories.length > 0) {
+			cats = categories.map((value, key) => {
+				return (
+					<li key ={key}>
+						<Link to={`/category/${value.slug}`}>{value.name}</Link>
+					</li>
+					);
+			});
 		}
 		return (
 			<header>
 				<nav>
 					<h1><Link to="/">KBlog</Link></h1>
 					<ul className ="navbar-header">
-						<li>
-							<Link to="/category">Category</Link>
-						</li>
+						{cats}
 						<li>
 							<Link to="/contact">Contact</Link>
 						</li>
@@ -66,5 +76,7 @@ class Header extends React.Component {
 export default Header;
 
 Header.propTypes = {
-    infoUser: PropTypes.func
+	infoUser: PropTypes.func,
+	categories: PropTypes.array,
+	getCategory: PropTypes.func
 }

@@ -11,7 +11,7 @@ export default function homeReducers(state = {}, action) {
         case HOME_RENDER_POST:
             return { ...state, posts: action.post };
         case HOME_GET_CATEGORY:
-            return { ...state, category: [action.category] };
+            return { ...state, category: action.category };
         case HOME_INCREASE_VIEW_POST:
             return { ...state};
         default:

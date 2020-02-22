@@ -23,6 +23,7 @@ export default class Account extends Component {
     login = () => {
         let { username, password } = this.state;
         this.props.login(username, password);
+        
     }
     register = () => {
         let { usernameRegister, email, passwordRegister } = this.state;
