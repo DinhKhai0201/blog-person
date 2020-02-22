@@ -46,13 +46,13 @@
 
 .panel .login input[type="submit"],
 .panel .register input[type="submit"] {
-    align-self: flex-start;
+    /* align-self: flex-start; */
     margin-top: 20px;
     padding: 10px 0;
     width: 150px;
     background: transparent;
-    border-radius: 0 50px 50px 0;
-    border-left: none !important;
+    /* border-radius: 0 50px 50px 0; */
+    /* border-left: none !important; */
     letter-spacing: 1px;
     cursor: pointer;
 }

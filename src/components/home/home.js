@@ -32,7 +32,7 @@ export default class Home extends Component {
 						<div className="col-md-6" key ={key}>
 								<div className="well" >
 									<Link to={`post/${value.slug}-${value._id}`}><img src="https://images.unsplash.com/photo-1542044896530-05d85be9b11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="teamflightbasketball.com" height="150px" className="pull-left" style={{ paddingRight: '15px', paddingBottom: '10px', paddingTop: '20px' }} onClick ={()=>this.onIncreaseView(value._id, parseInt(value.view) + 1)}/></Link>
-									<h3>{value.title}</h3>
+									<p className ="title">{value.title}</p>
 									<p>{value.content}</p>
 									<div className="spacer" /><div className="spacer" />
 								</div>

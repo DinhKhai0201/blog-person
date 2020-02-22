@@ -10,7 +10,6 @@ nav {
 nav h1 {
     color: #eee;
     font-family: 'Pacifico', cursive;
-    /* font-size: 42px; */
     float: left;
     margin: 16px auto;
 }
@@ -60,7 +59,6 @@ ul.navbar-header li a:hover {
 nav a:hover,
 a:hover {
     color: #C18055;
-    /* background: #fff; */
 }
 
 div#content {
@@ -115,3 +113,141 @@ div#content h2:before {
         width: 30%;
     }
 }
+
+
+/* 
+#header {
+    background-color: white;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding-bottom: 5px;
+    border: none;
+}
+
+
+
+#logo {
+    display: inline-block;
+    margin-left: 15px;
+    width: 50px;
+}
+
+#logoname {
+    display: inline-block;
+    font-size: 24px;
+    color: #323232;
+    font-family: "Permanent Marker", "Indie Flower", sans-serif;
+}
+
+#nav {
+    margin-top: 8px;
+    margin-right: 50px;
+}
+
+.navbar-toggle {
+    border: none;
+    padding: 22px 10px;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: white;
+}
+
+.navbar-collapse {
+    text-align: right;
+}
+
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+#nav ul {
+    list-style: none;
+    float: right;
+    text-align: right;
+}
+
+#nav ul li {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+}
+
+#nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-family: "Indie Flower", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 19px;
+    padding: 0px;
+}
+
+#nav ul li a:hover {
+    text-decoration: line-through;
+    color: black;
+    background-color: transparent;
+    transform: scale(1.1);
+}
+
+#nav ul li a:after {
+    color: black;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar-brand {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        z-index: -1;
+    }
+    #nav {
+        background-color: white;
+        width: 100%;
+    }
+    #nav ul li {
+        width: 100%;
+        background-color: white;
+        text-align: center;
+    }
+    #nav h1 {
+        position: relative;
+        transform: translatez(-5px);
+        text-align: center;
+    }
+}
+
+.slideUp {
+    animation: slideUp .3s forwards ease-out;
+}
+
+.slideDown {
+    animation: slideDown .5s forwards ease-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+} */

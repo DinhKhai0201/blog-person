@@ -18,7 +18,7 @@ export default class Post extends Component {
 				return (
 				<div className ="content-post" key ={key}>
 					<div className="hero">
-						<h1><span>I'm a cool</span><br />{value.title}</h1>
+						<h1><span>Topic</span><br />{value.title}</h1>
 						{/* <div className="mouse">
 							<span />
 						</div> */}

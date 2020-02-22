@@ -3252,9 +3252,18 @@ a.list-group-item-danger.active:focus {
     min-height: 20px;
     padding: 9px;
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #1A1D24;
     border-radius: 3px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
+}
+
+.well p {
+    color: white;
+}
+
+.well .title {
+    font-size: 24px;
+    padding-top: 12px;
 }
 
 .well blockquote {
